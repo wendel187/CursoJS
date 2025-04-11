@@ -10,18 +10,51 @@ function gerar() {
         res.innerHTML = "Por favor, insira valores válidos (e o intervalo deve ser maior que 0).";
         return;
     }
+    else{
+        res.innerHTML = "Contando: "
 
-    let resultado = "";
-    let atual = num1 + seque;
+        for(let c = num1; c <= num2; c += seque){
+            res.innerHTML += `${c} \u{1FAE1}` 
 
-    while (atual < num2) {
-        resultado += atual + " ";
-        atual += seque;
+        }
+
     }
-
-    if (resultado === "") {
-        res.innerHTML = "Nenhum número gerado com esses parâmetros.";
-    } else {
-        res.innerHTML = "Resultado da sequência: <br>" + resultado.trim();
-    }
+   
 }
+
+
+
+
+
+
+
+
+
+function tabuada(){
+    const n1 = document.getElementById("n1");
+    const tab = document.getElementById("seltab");
+
+    if (n1.value.length == 0) {
+        window.alert("Por favor digite um número")
+    } else{
+        let n = Number(n1.value)  
+        var i = 1
+        tab.innerHTML = ''
+    while (i <= 10){
+        let item = document.createElement('option')
+        item.text = `${n} x ${i} = ${n*i}`
+        tab.appendChild(item)
+        i++
+        }   
+     }
+   
+}
+
+
+
+
+
+
+
+
+
